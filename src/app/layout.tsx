@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
-import { ThemeProvider } from "@/src/components/ThemeProvider";
 import "./globals.css"
 
 const jetbrainsMono = JetBrains_Mono({
@@ -37,15 +36,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        {/* Set the theme before paint to avoid a flash of the wrong theme. */}
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem('theme')||'dark';document.documentElement.setAttribute('data-theme',t);}catch(e){document.documentElement.setAttribute('data-theme','dark');}})();`,
-          }}
-        />
       </head>
-      <body className={jetbrainsMono.variable}>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={`${jetbrainsMono.variable} relative`}>
+        {children}
       </body>
     </html>
   );

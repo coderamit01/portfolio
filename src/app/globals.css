@@ -28,7 +28,7 @@
   --pink: #ec5fa0;
 
   --bg: #141419;
-  --card: #1b1b22;
+  --card: #74747f4d;
   --card2: #20202a;
   --inner: #191920;
   --border: rgba(255, 255, 255, 0.07);
@@ -36,18 +36,6 @@
   --muted: #8b8b97;
   --header: rgba(20, 20, 25, 0.82);
   --dot: rgba(255, 255, 255, 0.022);
-}
-
-[data-theme="light"] {
-  --bg: #f1f2f5;
-  --card: #ffffff;
-  --card2: #f5f6f8;
-  --inner: #fbfbfc;
-  --border: rgba(20, 22, 30, 0.1);
-  --text: #171922;
-  --muted: #666674;
-  --header: rgba(241, 242, 245, 0.85);
-  --dot: rgba(20, 22, 30, 0.05);
 }
 
 /* ------------------------------- Resets --------------------------------- */
@@ -62,20 +50,23 @@ html {
 
 body {
   margin: 0;
-  background: var(--bg);
   color: var(--text);
   font-family: var(--font-mono);
   font-size: 15px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  background-image: radial-gradient(circle at 1px 1px, var(--dot) 1px, transparent 0);
-  background-size: 26px 26px;
-  transition: background-color 0.35s ease, color 0.35s ease;
+  /* background: #020617;
+  background-image:
+    linear-gradient(to right, rgba(71, 85, 105, 0.3) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(71, 85, 105, 0.3) 1px, transparent 1px),
+    radial-gradient(circle at 50% 50%, rgba(139, 92, 246, 0.15) 0%, transparent 70%);
+  background-size: "32px 32px, 32px 32px, 100% 100%"; */
 }
 
-::selection {
-  background: var(--accent);
-  color: #0f0f12;
+.screen-bg {
+  background-image: url('../assets/body-bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 a {
@@ -102,10 +93,12 @@ select {
 
 /* ------------------------------ Keyframes -------------------------------- */
 @keyframes blink {
+
   0%,
   49% {
     opacity: 1;
   }
+
   50%,
   100% {
     opacity: 0;
@@ -136,7 +129,9 @@ select {
   animation: spin-rev 30s linear infinite;
 }
 
+
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {

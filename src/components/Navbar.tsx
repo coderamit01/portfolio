@@ -2,10 +2,9 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { Code2, Menu, Moon, Sun, X } from "lucide-react";
+import { Code2, Menu, X } from "lucide-react";
 import { NAV_LINKS, SOCIALS } from "@/src/lib/data";
 import { useActiveSection } from "@/src/hooks/useActiveSection";
-import { useTheme } from "@/src/components/ThemeProvider";
 import { cn } from "@/src/lib/utils";
 
 const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
@@ -13,7 +12,6 @@ const SECTION_IDS = NAV_LINKS.map((l) => l.href.slice(1));
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const active = useActiveSection(SECTION_IDS);
-  const { theme, toggleTheme } = useTheme();
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-[var(--header)] backdrop-blur-[14px]">
@@ -73,18 +71,6 @@ export function Navbar() {
               </a>
             ))}
           </div>
-          <button
-            type="button"
-            aria-label="Toggle theme"
-            onClick={toggleTheme}
-            className="flex h-[46px] w-[46px] items-center justify-center rounded-xl border border-border bg-card2 transition-colors duration-200 hover:border-accent"
-          >
-            {theme === "dark" ? (
-              <Sun size={18} className="text-[#f5c451]" />
-            ) : (
-              <Moon size={18} className="text-muted" />
-            )}
-          </button>
         </div>
       </div>
 
