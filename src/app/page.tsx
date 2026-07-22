@@ -24,18 +24,18 @@ export default function Home() {
         <div className="relative z-20 flex flex-col gap-6.5 ">
           <Hero />
           <Stats />
-          <div className="grid grid-cols-1 gap-6.5 lg:grid-cols-2">
+          {/* <div className="grid grid-cols-1 gap-6.5 lg:grid-cols-2">
             <Cooperation />
             <GitJournal />
-          </div>
+          </div> */}
           <Services />
-          <Experience />
-          <Education />
-          <Projects />
-          <Skills />
-          <Testimonials />
+          {/* <Experience /> */}
+          {/* <Education /> */}
+          {/* <Projects /> */}
+          {/* <Skills /> */}
+         <Testimonials />
           <Pricing />
-          <Blog />
+          {/* <Blog /> */}
           <Contact />
         </div>
       </main>
