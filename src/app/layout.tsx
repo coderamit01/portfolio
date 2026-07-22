@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "./globals.css"
+import ReactLenis from "lenis/react";
 
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
@@ -38,7 +39,13 @@ export default function RootLayout({
       <head>
       </head>
       <body className={`${jetbrainsMono.variable} relative`}>
-        {children}
+        <ReactLenis root options={{
+          duration: 1.0,
+          smoothWheel:true,
+          syncTouch: false
+        }}>
+          {children}
+        </ReactLenis>
       </body>
     </html>
   );

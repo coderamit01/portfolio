@@ -58,14 +58,20 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
+
 .screen-bg {
- background:
-    radial-gradient(circle 400px at 8% 10%, rgba(109, 40, 217, 0.35), transparent 70%),   /* purple - top left */
-    radial-gradient(circle 350px at 92% 12%, rgba(202, 138, 4, 0.28), transparent 70%),   /* gold - top right */
-    radial-gradient(circle 380px at 5% 55%, rgba(190, 24, 93, 0.30), transparent 70%),    /* pink - mid left */
-    radial-gradient(circle 350px at 95% 60%, rgba(161, 98, 7, 0.25), transparent 70%),    /* gold - mid right */
-    radial-gradient(circle 400px at 10% 95%, rgba(157, 23, 77, 0.28), transparent 70%),   /* magenta - bottom */
-    #0d0d1a; 
+  background:
+    radial-gradient(circle 400px at 8% 10%, rgba(109, 40, 217, 0.35), transparent 70%),
+    /* purple - top left */
+    radial-gradient(circle 350px at 92% 12%, rgba(202, 138, 4, 0.28), transparent 70%),
+    /* gold - top right */
+    radial-gradient(circle 380px at 5% 55%, rgba(190, 24, 93, 0.30), transparent 70%),
+    /* pink - mid left */
+    radial-gradient(circle 350px at 95% 60%, rgba(161, 98, 7, 0.25), transparent 70%),
+    /* gold - mid right */
+    radial-gradient(circle 400px at 10% 95%, rgba(157, 23, 77, 0.28), transparent 70%),
+    /* magenta - bottom */
+    #0d0d1a;
 }
 
 a {

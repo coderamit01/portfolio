@@ -1,46 +1,12 @@
 "use client";
-
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Download } from "lucide-react";
 import { HERO_ROLES } from "@/src/lib/data";
-import { GlowEdge } from "@/src/components/ui/GlowEdge";
 import { fadeRight, fadeLeft, viewportOnce } from "@/src/lib/animations";
 import amitImage from "@/src/assets/amit.png";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
-/** Typewriter that types, pauses, deletes, then advances to the next role. */
-function useTypewriter(words: string[]) {
-  const [text, setText] = useState(words[0] ?? "");
-
-  useEffect(() => {
-    let word = 0;
-    let char = words[0]?.length ?? 0;
-    let deleting = false;
-    let timer: ReturnType<typeof setTimeout>;
-
-    const tick = () => {
-      const current = words[word];
-      char += deleting ? -1 : 1;
-      setText(current.slice(0, char));
-
-      let delay = deleting ? 55 : 110;
-      if (!deleting && char === current.length) {
-        deleting = true;
-        delay = 1500;
-      } else if (deleting && char === 0) {
-        deleting = false;
-        word = (word + 1) % words.length;
-        delay = 350;
-      }
-      timer = setTimeout(tick, delay);
-    };
-
-    timer = setTimeout(tick, 1600);
-    return () => clearTimeout(timer);
-  }, [words]);
-
-  return text;
-}
 
 const TECH_TILES = [
   { node: "N", bg: "#000", color: "#fff", size: "text-[22px]" },
@@ -71,80 +37,64 @@ const TECH_TILES = [
 ];
 
 export function Hero() {
-  const typed = useTypewriter(HERO_ROLES);
-
   return (
     <section
       id="about"
-      className="relative mt-[26px] scroll-mt-[94px] overflow-hidden   p-12"
+      className="relative mt-6.5 scroll-mt-23.5 overflow-hidden   p-12"
     >
       <span id="top" className="absolute -top-24" />
-      <div className="flex flex-wrap items-center gap-[54px]">
+      <div className="flex flex-wrap items-center gap-13.5">
         <motion.div
           variants={fadeRight}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="min-w-[300px] flex-1 basis-[380px]"
+          className="min-w-75 flex-1 basis-95"
         >
-          <p className="mb-[14px] text-[clamp(15px,1.4vw,17px)] tracking-[0.5px] text-pink">
+          <p className="mb-3.5 text-[clamp(15px,1.4vw,17px)] tracking-[0.5px] text-pink">
             {"<span>"}
-            <span className="text-text">Hey, I&rsquo;m Amit</span>
+            <span className="text-text">Hi, I'm Amit Hasan</span>
             <span className="animate-blink text-accent">|</span>
             {"</span>"}
           </p>
-          <h1 className="mb-[22px] text-[clamp(34px,4.4vw,58px)] font-extrabold leading-[1.08] tracking-[-1px]">
-            Senior{" "}
-            <span className="text-accent">
-              {"{"}
-              {typed}
-              {"}"}
-            </span>
-            Web &amp; App developer
-            <span className="animate-blink text-accent">_</span>
+          <h1 className="mb-5.5 text-[clamp(34px,4.4vw,58px)] font-extrabold leading-[1.08] tracking-[-1px]">
+            Building Modern
+            <span className="text-accent"> Web Experiences</span>
           </h1>
-          <p className="mb-[30px] max-w-[560px] text-[clamp(13px,1.1vw,15px)] leading-[1.75] text-text">
-            <span className="text-pink">{"<p>"}</span>With expertise in
-            cutting-edge technologies such as{" "}
-            <span className="text-pink">
-              NodeJS, React, Angular, and Laravel
-            </span>
-            ... I deliver web solutions that are both innovative and robust.
+          <p className="mb-7.5 max-w-140 text-[clamp(13px,1.1vw,15px)] leading-[1.75] text-text">
+            <span className="text-pink">{"<p>"}</span>
+            Every great product starts with an idea. I bring those ideas to life by building thoughtful, high-quality digital experiences that are reliable, engaging, and designed for long-term success.
             <span className="text-pink">{"</p>"}</span>
           </p>
 
-          <div className="mb-[34px] flex flex-wrap items-center gap-[14px]">
-            {TECH_TILES.map((tile, i) => (
-              <motion.div
-                key={i}
-                whileHover={{ y: -5 }}
-                className={`flex h-[54px] w-[54px] items-center justify-center rounded-[13px] border border-border font-extrabold ${tile.size}`}
-                style={{ background: tile.bg, color: tile.color }}
-              >
-                {tile.node}
-              </motion.div>
-            ))}
-            <span className="text-sm text-muted">...and more</span>
+          <div className="mb-8.5 flex items-center gap-3.5">
+            <Marquee speed={30} delay={0} className="flex-1">
+              {TECH_TILES.map((tile, i) => (
+                <div
+                  key={i}
+                  className={`flex h-13.5 w-13.5 items-center justify-center rounded-[13px] border border-border font-extrabold me-3 ${tile.size}`}
+                  style={{ background: tile.bg, color: tile.color }}
+                >
+                  {tile.node}
+                </div>
+              ))}
+            </Marquee>
+            <span className="text-sm text-muted flex-1">...and More</span>
           </div>
 
-          <motion.a
-            href="#"
-            whileHover={{ gap: 16 }}
-            className="inline-flex items-center gap-[11px] text-[15px] font-semibold text-accent"
-          >
-            <Download size={20} />[ Download my CV ]
-          </motion.a>
+          <div className="flex items-center gap-4">
+            <button className="border border-slate-300 py-1.5 px-5 cursor-pointer" role="button">{`Let's Talk`}</button>
+            <button className="border border-slate-300 py-1.5 px-5 cursor-pointer" role="button">{`Case Studies`}</button>
+          </div>
         </motion.div>
-        {/* Hexagon avatar */}
         <motion.div
           variants={fadeLeft}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOnce}
-          className="relative mx-auto h-[470px] w-full max-w-[420px] flex-none"
-        >
+          className="relative mx-auto h-117.5 w-full max-w-105 flex-none">
           <div>
-            <img src={amitImage.src} alt="Amit Hasan Profile Image" />
+            <Image src={amitImage} className="h-full w-full" alt="Amit Hasan Profile Image" height={100} width={100} />
           </div>
         </motion.div>
       </div>
