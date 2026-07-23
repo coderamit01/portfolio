@@ -1,45 +1,34 @@
 import { Code2 } from "lucide-react";
 import { NAV_LINKS, SOCIALS } from "@/src/lib/data";
+import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="mt-[60px] border-t border-border px-6 py-12">
-      <div className="mx-auto flex max-w-[1300px] flex-col items-center gap-[22px]">
-        <a
+    <footer className="mt-15 border-t border-border px-6 py-12">
+      <div className="mx-auto flex max-w-325 flex-col items-center gap-5.5">
+        <Link
           href="#top"
-          className="flex items-center gap-[9px] text-xl font-bold"
+          className="flex items-center gap-2.25 text-xl font-bold"
         >
           <Code2 className="text-accent" size={24} />
-          Amit<span className="text-muted">.dev</span>
-        </a>
+          <span className="text-slate-900">Amit</span>          
+        </Link>
 
         <div className="flex gap-5">
           {SOCIALS.map(({ label, href, icon: Icon }) => (
-            <a
+            <Link
               key={label}
               href={href}
               aria-label={label}
-              className="text-muted transition-colors duration-200 hover:text-accent"
+              className="transition-colors duration-200 hover:text-accent"
             >
-              <Icon size={17} />
-            </a>
+              <Icon className="text-slate-600" size={17} />
+            </Link>
           ))}
         </div>
 
-        <nav className="flex flex-wrap justify-center gap-[26px] text-sm">
-          {NAV_LINKS.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-muted transition-colors duration-200 hover:text-accent"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <p className="text-xs text-muted">
-          © {new Date().getFullYear()} Amit.dev — All rights reserved.
+        <p className="text-base text-slate-500">
+          © {new Date().getFullYear()} Amit — All rights reserved.
         </p>
       </div>
     </footer>
