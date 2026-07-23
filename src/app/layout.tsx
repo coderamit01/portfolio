@@ -11,20 +11,20 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Amit.dev — Senior Full Stack Web & App Developer",
+  title: "Amit Hasan — Full Stack Web & App Developer",
   description:
-    "Portfolio of Amit, a senior full stack web & app developer specializing in React, Node.js, Angular, and modern web solutions.",
+    "Portfolio of Amit, a full stack web developer specializing in React, Node.js, Angular, and modern web solutions.",
   keywords: [
     "full stack developer",
     "web developer",
     "react",
-    "node.js",
+    "next.js",
     "portfolio",
   ],
   openGraph: {
-    title: "Amit.dev — Senior Full Stack Web & App Developer",
+    title: "Amit Hasan — Full Stack Web Developer",
     description:
-      "Portfolio of Amit, a senior full stack web & app developer.",
+      "Portfolio of Amit, a full stack web developer.",
     type: "website",
   },
 };

@@ -16,6 +16,7 @@ import {
   Twitter,
   Linkedin,
   Github,
+  Instagram,
 } from "lucide-react";
 import type {
   BlogPost,
@@ -33,19 +34,19 @@ import type {
 } from "@/src/types";
 
 export const NAV_LINKS: NavLink[] = [
-  { label: "About me", href: "#about" },
-  { label: "Resume", href: "#resume" },
+  { label: "About Me", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Portfolio", href: "#portfolio" },
-  { label: "Blog", href: "#blog" },
+  { label: "Skills", href: "#skills" },
+  { label: "Projects", href: "#projects" },
+  { label: "FAQ", href: "#faq" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const SOCIALS: SocialLink[] = [
-  { label: "Facebook", href: "#", icon: Facebook },
-  { label: "X", href: "#", icon: Twitter },
-  { label: "LinkedIn", href: "#", icon: Linkedin },
-  { label: "GitHub", href: "#", icon: Github },
+  { label: "Facebook", href: "https://www.facebook.com/procoderamit/", icon: Facebook },
+  { label: "X", href: "https://www.instagram.com/procoderamit/", icon: Instagram },
+  { label: "LinkedIn", href: "https://www.linkedin.com/in/procoderamit/", icon: Linkedin },
+  { label: "GitHub", href: "https://github.com/coderamit01", icon: Github },
 ];
 
 /** Roles cycled through by the typewriter effect in the hero headline. */
