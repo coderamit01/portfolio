@@ -1,10 +1,24 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Outfit:wght@100..900&display=swap');
 @import "tailwindcss";
 
-/* ---------------------------------------------------------------------------
-   Tailwind v4 theme mapping — exposes the CSS variables below as utility
-   color tokens, e.g. `bg-card`, `text-muted`, `border-border`, `text-accent`.
---------------------------------------------------------------------------- */
+
+:root {
+  --accent: #21BF73;
+  --accent2: #1b945a;
+  --pink: #ec5fa0;
+
+  --bg: #141419;
+  --card: #74747f4d;
+  --card2: #20202a;
+  --inner: #191920;
+  --border: rgba(255, 255, 255, 0.07);
+  --text: #e9e9ee;
+  --muted: #8b8b97;
+  --header: rgba(20, 20, 25, 0.82);
+  --dot: rgba(255, 255, 255, 0.022);
+}
+
+
 @theme inline {
   --color-accent: var(--accent);
   --color-accent-2: var(--accent2);
@@ -23,21 +37,6 @@
 }
 
 /* ----------------------------- Theme tokens ------------------------------ */
-:root {
-  --accent: #8dd14f;
-  --accent2: #a7e34f;
-  --pink: #ec5fa0;
-
-  --bg: #141419;
-  --card: #74747f4d;
-  --card2: #20202a;
-  --inner: #191920;
-  --border: rgba(255, 255, 255, 0.07);
-  --text: #e9e9ee;
-  --muted: #8b8b97;
-  --header: rgba(20, 20, 25, 0.82);
-  --dot: rgba(255, 255, 255, 0.022);
-}
 
 /* ------------------------------- Resets --------------------------------- */
 * {
@@ -60,18 +59,7 @@ body {
 }
 
 .screen-bg {
-  background:
-    radial-gradient(circle 400px at 8% 10%, rgba(109, 40, 217, 0.35), transparent 70%),
-    /* purple - top left */
-    radial-gradient(circle 350px at 92% 12%, rgba(202, 138, 4, 0.28), transparent 70%),
-    /* gold - top right */
-    radial-gradient(circle 380px at 5% 55%, rgba(190, 24, 93, 0.30), transparent 70%),
-    /* pink - mid left */
-    radial-gradient(circle 350px at 95% 60%, rgba(161, 98, 7, 0.25), transparent 70%),
-    /* gold - mid right */
-    radial-gradient(circle 400px at 10% 95%, rgba(157, 23, 77, 0.28), transparent 70%),
-    /* magenta - bottom */
-    #0d0d1a;
+  background: #21bf7314;
 }
 
 a {
@@ -145,4 +133,89 @@ select {
     transition-duration: 0.001ms !important;
     scroll-behavior: auto !important;
   }
+}
+
+.action_button {
+  all: unset;
+  width: 100px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  position: relative;
+  color: #f0f0f0;
+  cursor: pointer;
+  z-index: 1;
+  padding: 10px 20px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.action_button::after,
+.action_button::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -99999;
+  transition: all .4s;
+}
+
+.action_button::before {
+  transform: translate(0%, 0%);
+  width: 100%;
+  height: 100%;
+  background: #28282d;
+  border-radius: 10px;
+}
+
+.action_button::after {
+  transform: translate(10px, 10px);
+  width: 35px;
+  height: 35px;
+  background: #21bf734d;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 50px;
+}
+
+.action_button:hover::before {
+  transform: translate(5%, 20%);
+  width: 110%;
+  height: 110%;
+}
+
+.action_button:hover::after {
+  border-radius: 10px;
+  transform: translate(0, 0);
+  width: 100%;
+  height: 100%;
+}
+
+.action_button:active::after {
+  transition: 0s;
+  transform: translate(0, 5%);
+}
+
+.secondary_button {
+  font-size: 16px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  padding: 10px 20px;
+  outline: 0;
+  border-radius: 10px;
+  color: #21BF73;
+  border: 1px solid #21BF73;
+  cursor: pointer;
+  position: relative;
+  background-color: #87f3bf1a;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
 }

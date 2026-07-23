@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="mx-auto w-full max-w-7xl px-6">
+      <main className="mx-auto w-full max-w-7xl px-4">
         <div className="min-h-screen fixed inset-0 screen-bg"></div>
         <div className="relative z-20 flex flex-col gap-6.5 ">
           <Hero />
