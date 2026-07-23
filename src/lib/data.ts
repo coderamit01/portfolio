@@ -393,10 +393,9 @@ export const BLOG_POSTS: BlogPost[] = [
 ];
 
 export const CONTACT_INFO: ContactInfo[] = [
-  { icon: Phone, label: "Phone Number", value: "+1-234-567-8901" },
-  { icon: Mail, label: "Email", value: "contact@william.design" },
-  { icon: MessageCircle, label: "Skype", value: "WilliamDesignUX" },
-  { icon: MapPinned, label: "Address", value: "0811 Erdman Prairie, Joaville CA" },
+  { icon: Phone, label: "Phone Number", value: "+8801315252479" },
+  { icon: Mail, label: "Email", value: "amitmohammad46@gmail.com" },
+  { icon: MapPinned, label: "Address", value: "Mohammadpur, Dhaka" },
 ];
 
 export const COOPERATION_CONTACTS = [
